@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Download, Camera, Music, Compass, Sparkles, Heart, Film, ExternalLink } from 'lucide-react';
+import { ArrowRight, Download, Film, FileText, Video, Scissors } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import Picture from '../components/Picture';
 
@@ -14,16 +14,16 @@ export default function AboutModel({ onOpenLightbox, onNavigate }) {
   const polaroids = [
     {
       id: 'polaroid-1',
-      title: '35mm Film Contact Strip',
-      image: '/assets/about/filmstrip_vertical.png',
-      caption: 'Three-frame black and white film contact strip.',
+      title: 'Analog Coastal Sunset',
+      image: '/assets/about/analog_diary_01.webp',
+      caption: 'Quiet seaside golden hour captured on 35mm film.',
       rotation: -3
     },
     {
       id: 'polaroid-2',
-      title: 'Backstage Polaroid Expression',
-      image: '/assets/about/torn_paper_portrait.png',
-      caption: 'Duotone portrait layered between torn paper edges.',
+      title: 'Backstage Polaroid Portrait',
+      image: '/assets/about/analog_diary_02.webp',
+      caption: 'Evening ivy atmosphere with vintage eyewear and quiet poise.',
       rotation: 4
     },
     {
@@ -73,47 +73,24 @@ export default function AboutModel({ onOpenLightbox, onNavigate }) {
             {/* Main Center Image: Model lying down with orange phone */}
             <Picture
               src="/assets/about/model_telephone_hero.webp"
-              alt="CONENM — Model with Vintage Telephone"
+              alt="Model with Vintage Telephone"
               className="about-hero-main-img"
               loading="eager"
               fetchpriority="high"
               decoding="async"
               onClick={() => onOpenLightbox({
-                image: '/assets/tata_letak_editorial_tentang_model_1.webp',
+                image: '/assets/about/model_telephone_hero.webp',
                 title: 'About The Model — Full Editorial Spread',
                 caption: 'Full editorial collage: studio portraits, filmstrip frames and torn-paper textures.'
               })}
               title="Click to view full editorial collage"
               style={{ cursor: 'pointer' }}
             />
-
-            {/* Floating Filmstrip on the Right */}
-            <div
-              className="about-floating-filmstrip"
-              onClick={() => onOpenLightbox({
-                image: '/assets/about/filmstrip_vertical.png',
-                title: '35mm Filmstrip Trio',
-                caption: 'Three-frame black and white film contact strip.'
-              })}
-              title="View 35mm Filmstrip"
-              style={{ cursor: 'pointer' }}
-            >
-              <img src="/assets/about/filmstrip_vertical.png" alt="35mm Filmstrip" />
-            </div>
-
-            {/* Floating Torn Paper Collage on Bottom Left */}
-            <div
-              className="about-floating-torn-paper"
-              onClick={() => onOpenLightbox({
-                image: '/assets/about/torn_paper_portrait.png',
-                title: 'Torn Polaroid Snapshot',
-                caption: 'Layered duotone portrait with hand-marked star overlay.'
-              })}
-              title="View Candid Polaroid"
-              style={{ cursor: 'pointer' }}
-            >
-              <img src="/assets/about/torn_paper_portrait.png" alt="Torn Paper Candid Portrait" />
-            </div>
+            {/* The two floating corner photos (filmstrip, torn-paper collage) were
+                removed from this hero. Their classes and assets stay in place:
+                .about-floating-filmstrip / .about-floating-torn-paper in index.css
+                and analog_diary_01/02 in public/assets/about/ are simply no longer
+                rendered here. */}
           </ScrollReveal>
         </div>
 
@@ -179,8 +156,9 @@ export default function AboutModel({ onOpenLightbox, onNavigate }) {
             }}>
               "The most arresting fashion photograph is never just about the dress—it’s about the silent conversation between the lens, the posture, and the soul inside the garment."
             </p>
-            <cite style={{ fontFamily: 'var(--font-sans)', fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#666', fontStyle: 'normal' }}>
-              — CONENM
+            <cite style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontFamily: 'var(--font-sans)', fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#666', fontStyle: 'normal' }}>
+              <span>—</span>
+              <img src="/assets/brand/logo-dark.png" alt="Logo" style={{ height: '16px', width: 'auto', objectFit: 'contain' }} />
             </cite>
           </blockquote>
 
@@ -190,44 +168,44 @@ export default function AboutModel({ onOpenLightbox, onNavigate }) {
               Creative Passions Beyond The Lens
             </h3>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
               <div style={{ background: '#ffffff', padding: '1.5rem', border: '1px solid #eee', borderRadius: '4px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <Camera size={18} style={{ color: 'var(--accent-denim)' }} />
-                  <h4 style={{ fontSize: '0.95rem', fontWeight: 700 }}>Analog 35mm Film</h4>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '0.5rem' }}>
+                  <Film size={18} style={{ color: 'var(--accent-denim)' }} />
+                  <h4 style={{ fontSize: '0.95rem', fontWeight: 700 }}>Content &amp; Film Planning</h4>
                 </div>
                 <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: 1.5 }}>
-                  Carrying mechanical rangefinder cameras backstage to document intimate behind-the-scenes atmospheres.
+                  Conceptualizing narrative arcs, moodboards, and shotlists for brand storytelling and creative campaigns.
                 </p>
               </div>
 
               <div style={{ background: '#ffffff', padding: '1.5rem', border: '1px solid #eee', borderRadius: '4px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <Music size={18} style={{ color: 'var(--accent-denim)' }} />
-                  <h4 style={{ fontSize: '0.95rem', fontWeight: 700 }}>Vinyl & City Pop</h4>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '0.5rem' }}>
+                  <FileText size={18} style={{ color: 'var(--accent-denim)' }} />
+                  <h4 style={{ fontSize: '0.95rem', fontWeight: 700 }}>Scriptwriting</h4>
                 </div>
                 <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: 1.5 }}>
-                  Collecting 80s Japanese City Pop, French synth-wave, and ambient techno records.
+                  Drafting engaging spoken scripts, commercial copy, and voiceover narratives tailored to digital audiences.
                 </p>
               </div>
 
               <div style={{ background: '#ffffff', padding: '1.5rem', border: '1px solid #eee', borderRadius: '4px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <Compass size={18} style={{ color: 'var(--accent-denim)' }} />
-                  <h4 style={{ fontSize: '0.95rem', fontWeight: 700 }}>Architectural Travel</h4>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '0.5rem' }}>
+                  <Video size={18} style={{ color: 'var(--accent-denim)' }} />
+                  <h4 style={{ fontSize: '0.95rem', fontWeight: 700 }}>Audio-Visual Production</h4>
                 </div>
                 <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: 1.5 }}>
-                  Studying brutalist and modernist concrete architecture across global fashion capitals.
+                  Directing on-set talent, lighting setups, and soundscapes for commercial lookbooks and social series.
                 </p>
               </div>
 
               <div style={{ background: '#ffffff', padding: '1.5rem', border: '1px solid #eee', borderRadius: '4px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <Sparkles size={18} style={{ color: 'var(--accent-denim)' }} />
-                  <h4 style={{ fontSize: '0.95rem', fontWeight: 700 }}>Vintage Denim Archive</h4>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '0.5rem' }}>
+                  <Scissors size={18} style={{ color: 'var(--accent-denim)' }} />
+                  <h4 style={{ fontSize: '0.95rem', fontWeight: 700 }}>Video Editing</h4>
                 </div>
                 <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: 1.5 }}>
-                  Curating historical selvedge denim pieces, vintage chainstitch caps, and raw workwear.
+                  Post-production pacing, color grading, sound design, and vertical formats optimized for Reels and TikTok.
                 </p>
               </div>
             </div>
@@ -245,23 +223,11 @@ export default function AboutModel({ onOpenLightbox, onNavigate }) {
             <div className="comp-spec-list">
               <div className="spec-item">
                 <span className="spec-label">Height</span>
-                <div className="spec-value">176 cm / 5' 9.5"</div>
+                <div className="spec-value">161 cm / 5’ 3.5”</div>
               </div>
               <div className="spec-item">
-                <span className="spec-label">Bust</span>
-                <div className="spec-value">82 cm / 32"</div>
-              </div>
-              <div className="spec-item">
-                <span className="spec-label">Waist</span>
-                <div className="spec-value">59 cm / 23"</div>
-              </div>
-              <div className="spec-item">
-                <span className="spec-label">Hips</span>
-                <div className="spec-value">88 cm / 34.5"</div>
-              </div>
-              <div className="spec-item">
-                <span className="spec-label">Shoe Size</span>
-                <div className="spec-value">38.5 EU / 7.5 US</div>
+                <span className="spec-label">Weight</span>
+                <div className="spec-value">48 kg / 106 lbs</div>
               </div>
               <div className="spec-item">
                 <span className="spec-label">Eye Color</span>
@@ -269,28 +235,44 @@ export default function AboutModel({ onOpenLightbox, onNavigate }) {
               </div>
               <div className="spec-item">
                 <span className="spec-label">Hair Color</span>
-                <div className="spec-value">Dark Brown / Black</div>
+                <div className="spec-value">Black</div>
+              </div>
+              <div className="spec-item">
+                <span className="spec-label">Bust</span>
+                <div className="spec-value">—</div>
+              </div>
+              <div className="spec-item">
+                <span className="spec-label">Waist</span>
+                <div className="spec-value">—</div>
+              </div>
+              <div className="spec-item">
+                <span className="spec-label">Hips</span>
+                <div className="spec-value">—</div>
+              </div>
+              <div className="spec-item">
+                <span className="spec-label">Shoe Size</span>
+                <div className="spec-value">38</div>
               </div>
               <div className="spec-item">
                 <span className="spec-label">Languages</span>
-                <div className="spec-value">English, Korean, Japanese</div>
+                <div className="spec-value">Indonesian, English</div>
               </div>
             </div>
 
-            {/* Representation Agencies */}
+            {/* Direct Booking Desk */}
             <div className="agencies-list-box">
-              <h4>Representation &amp; Booking</h4>
+              <h4>Direct Inquiries &amp; Booking</h4>
               <div className="agency-item">
-                <span className="agency-city">Worldwide</span>
-                <span className="agency-name">Direct booking desk</span>
+                <span className="agency-city">Direct Email</span>
+                <a href="mailto:azkiaprusha@gmail.com" style={{ color: '#111', fontWeight: 600, textDecoration: 'none' }}>
+                  azkiaprusha@gmail.com
+                </a>
               </div>
               <div className="agency-item">
-                <span className="agency-city">Seoul</span>
-                <span className="agency-name">Management &amp; scheduling</span>
-              </div>
-              <div className="agency-item">
-                <span className="agency-city">International</span>
-                <span className="agency-name">Agency representation on request</span>
+                <span className="agency-city">Instagram</span>
+                <a href="https://www.instagram.com/azkiaprus/" target="_blank" rel="noopener noreferrer" style={{ color: '#111', fontWeight: 600, textDecoration: 'none' }}>
+                  @azkiaprus
+                </a>
               </div>
             </div>
 
@@ -406,7 +388,7 @@ export default function AboutModel({ onOpenLightbox, onNavigate }) {
               })}
             >
               <div style={{ background: '#f5f5f5', height: '320px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Picture src={p.image} alt={p.title} style={{ maxHeight: '100%', width: 'auto', objectFit: 'contain' }} loading="lazy" />
+                <Picture src={p.image} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} loading="lazy" />
               </div>
               <div style={{ marginTop: '1.25rem' }}>
                 <h4 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.25rem', fontWeight: 400, letterSpacing: '0.04em', lineHeight: 1, textTransform: 'uppercase', marginBottom: '0.35rem' }}>

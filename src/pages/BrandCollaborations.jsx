@@ -236,8 +236,8 @@ export default function BrandCollaborations({ onOpenLightbox, onNavigate }) {
             <button className="cp-btn" onClick={() => onNavigate('contact')}>
               Start a Collaboration <ArrowUpRight size={16} />
             </button>
-            <a href="mailto:inquiries@conenm-models.com" className="cp-btn cp-btn-ghost">
-              inquiries@conenm-models.com
+            <a href="mailto:azkiaprusha@gmail.com" className="cp-btn cp-btn-ghost">
+              azkiaprusha@gmail.com
             </a>
           </div>
         </ScrollReveal>

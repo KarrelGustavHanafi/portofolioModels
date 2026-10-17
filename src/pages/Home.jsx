@@ -218,7 +218,7 @@ export default function Home({ onNavigate, onOpenLightbox }) {
 
           <ScrollReveal animation="fade-left" delay={150} duration={850} className="home-profile-media">
             <Picture
-              src="/assets/tata_letak_editorial_tentang_model_1.webp"
+              src="/assets/about/model_telephone_hero.webp"
               alt="Editorial Profile Preview"
               className="home-profile-img sr-img-lift"
               loading="lazy"

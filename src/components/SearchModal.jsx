@@ -31,16 +31,16 @@ export default function SearchModal({ isOpen, onClose, onSelectItem, onNavigate 
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
-      <div 
-        className="modal-content-card" 
+      <div
+        className="modal-content-card"
         style={{ maxWidth: '640px', padding: '1.5rem 2rem' }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Input Bar */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', borderBottom: '2px solid #111', paddingBottom: '0.75rem', marginBottom: '1.5rem' }}>
           <Search size={22} style={{ color: '#111' }} />
-          <input 
-            type="text" 
+          <input
+            type="text"
             autoFocus
             placeholder="Search looks, products, campaigns, denim..."
             value={query}

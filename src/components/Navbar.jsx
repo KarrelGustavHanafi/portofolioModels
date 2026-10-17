@@ -71,8 +71,13 @@ export default function Navbar({ activePage, setActivePage, onOpenSearch }) {
             href="#home"
             className="nav-brand-logo"
             onClick={(e) => { e.preventDefault(); handleNavClick('home'); }}
+            aria-label="Home"
           >
-            CONENM
+            <img
+              src="/assets/brand/logo-dark.png"
+              alt="Logo"
+              className="nav-brand-img"
+            />
           </a>
         </div>
 
@@ -170,23 +175,30 @@ export default function Navbar({ activePage, setActivePage, onOpenSearch }) {
           padding: '5rem 2rem 2.5rem',
           boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
         }}>
-          <button
-            onClick={() => setMobileMenuOpen(false)}
-            style={{
-              position: 'absolute',
-              top: '1.5rem',
-              right: '2rem',
-              width: '40px',
-              height: '40px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer'
-            }}
-            aria-label="Close menu"
-          >
-            <X size={24} />
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2.5rem' }}>
+            <img
+              src="/assets/brand/logo-dark.png"
+              alt="Logo"
+              style={{ height: '24px', width: 'auto', objectFit: 'contain' }}
+            />
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                width: '40px',
+                height: '40px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                background: 'none',
+                border: 'none',
+                color: '#111'
+              }}
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+          </div>
 
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
             {navItems.map((item) => (
@@ -233,9 +245,21 @@ export default function Navbar({ activePage, setActivePage, onOpenSearch }) {
           </ul>
 
           <div style={{ marginTop: 'auto', paddingTop: '2rem', borderTop: '1px solid #eee' }}>
-            <p style={{ fontSize: '0.8rem', color: '#999', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-              Representation: Seoul • Tokyo • Paris
-            </p>
+            <span style={{ fontSize: '0.72rem', color: '#888', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '0.35rem' }}>
+              Direct Inquiries
+            </span>
+            <a
+              href="mailto:azkiaprusha@gmail.com"
+              style={{
+                fontSize: '0.9rem',
+                color: '#111111',
+                fontWeight: 700,
+                letterSpacing: '0.02em',
+                textDecoration: 'none'
+              }}
+            >
+              azkiaprusha@gmail.com
+            </a>
           </div>
         </div>
       )}

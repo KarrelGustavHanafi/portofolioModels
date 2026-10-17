@@ -15,7 +15,13 @@ export default function Footer({ setActivePage }) {
         <div className="footer-top-row">
           {/* Brand & Editorial Identity */}
           <ScrollReveal animation="fade-up" delay={0} duration={700} className="footer-brand">
-            <h2>CONENM</h2>
+            <div style={{ marginBottom: '1.25rem' }}>
+              <img
+                src="/assets/brand/logo-light.png"
+                alt="Logo"
+                className="footer-brand-img"
+              />
+            </div>
             <p>
               Editorial model working across conceptual fashion, portraiture and
               commercial campaigns.
@@ -55,36 +61,18 @@ export default function Footer({ setActivePage }) {
             </ul>
           </ScrollReveal>
 
-          {/* Global Representation */}
-          <ScrollReveal animation="fade-up" delay={200} duration={700} className="footer-col">
-            <h4>Representation</h4>
-            <ul className="footer-nav-list">
-              <li>
-                <span style={{ color: '#fff', fontWeight: 600 }}>Worldwide</span>
-                <span style={{ display: 'block', fontSize: '0.8rem', color: '#777' }}>Direct booking desk</span>
-              </li>
-              <li>
-                <span style={{ color: '#fff', fontWeight: 600 }}>Seoul</span>
-                <span style={{ display: 'block', fontSize: '0.8rem', color: '#777' }}>Management &amp; scheduling</span>
-              </li>
-              <li>
-                <span style={{ color: '#fff', fontWeight: 600 }}>International</span>
-                <span style={{ display: 'block', fontSize: '0.8rem', color: '#777' }}>Agency representation on request</span>
-              </li>
-            </ul>
-          </ScrollReveal>
-
           {/* Direct Contacts */}
-          <ScrollReveal animation="fade-up" delay={300} duration={700} className="footer-col">
+          <ScrollReveal animation="fade-up" delay={200} duration={700} className="footer-col">
             <h4>Direct Desk</h4>
-            <p style={{ color: '#888', fontSize: '0.85rem', marginBottom: '0.75rem' }}>
+            <p style={{ color: '#888', fontSize: '0.85rem', marginBottom: '0.75rem', lineHeight: 1.6 }}>
               For editorial assignments, runway bookings, lookbooks, and brand ambassador inquiries:
             </p>
             <a 
-              href="mailto:inquiries@conenm-models.com" 
+              href="mailto:azkiaprusha@gmail.com" 
+              className="footer-email-link"
               style={{ color: '#ffffff', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'underline' }}
             >
-              inquiries@conenm-models.com
+              azkiaprusha@gmail.com
             </a>
           </ScrollReveal>
         </div>
@@ -92,14 +80,14 @@ export default function Footer({ setActivePage }) {
         {/* Footer Bottom Bar */}
         <div className="footer-bottom-row">
           <div>
-            © {new Date().getFullYear()} CONENM. All rights reserved.
+            © {new Date().getFullYear()} Azkia Prusha. All rights reserved.
           </div>
 
           <div className="footer-social-icons">
             <a href="https://www.instagram.com/azkiaprus/" target="_blank" rel="noopener noreferrer" title="Instagram">
               <InstagramIcon size={18} />
             </a>
-            <a href="mailto:inquiries@conenm-models.com" title="Email Direct">
+            <a href="mailto:azkiaprusha@gmail.com" title="Email Direct">
               <Mail size={18} />
             </a>
             <a href="https://models.com" target="_blank" rel="noopener noreferrer" title="Models.com Portfolio">
