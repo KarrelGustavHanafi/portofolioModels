@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Lightbox from './components/Lightbox';
-import GarmentModal from './components/GarmentModal';
 import CollabModal from './components/CollabModal';
 import SearchModal from './components/SearchModal';
 
@@ -17,7 +16,6 @@ export default function App() {
 
   // Modals state
   const [lightboxData, setLightboxData] = useState(null);
-  const [activeGarment, setActiveGarment] = useState(null);
   const [activeCollab, setActiveCollab] = useState(null);
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -84,7 +82,6 @@ export default function App() {
         {activePage === 'portfolio' && (
           <Portfolio
             onOpenLightbox={(data) => setLightboxData(data)}
-            onOpenGarment={(garment) => setActiveGarment(garment)}
           />
         )}
 
@@ -124,14 +121,6 @@ export default function App() {
           caption={lightboxData.caption}
           credits={lightboxData.credits}
           onClose={() => setLightboxData(null)}
-        />
-      )}
-
-      {/* Garment Details Modal */}
-      {activeGarment && (
-        <GarmentModal
-          garment={activeGarment}
-          onClose={() => setActiveGarment(null)}
         />
       )}
 

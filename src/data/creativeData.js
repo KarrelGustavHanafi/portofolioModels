@@ -1,7 +1,7 @@
 /**
  * 02. THE CREATIVE PORTFOLIO — single-page creative archive.
  * Every image, title, year and credit below is sourced from existing project
- * assets (portfolioData.js / collabData.js / about assets) or from the
+ * assets (portfolioData.js / about assets) or from the
  * editorial-series photo set. Nothing is invented — where a source carries no
  * credit, the `credit` field is omitted rather than filled in.
  * Shortcut: discipline tags are section-level taxonomy, credits only appear where

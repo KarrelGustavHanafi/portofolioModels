@@ -1083,56 +1083,6 @@ img {
     text-align: center;
   }
 
-.garment-thumb-card {
-  width: 130px;
-  height: 160px;
-  flex-shrink: 0;
-  padding: 0.75rem;
-  background: #ffffff;
-  border: 1px solid #eeeeee;
-  border-radius: 2px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-}
-
-.garment-thumb-card:hover {
-  border-color: #000;
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-
-.garment-thumb-card.active {
-  border-color: #000;
-  border-width: 2px;
-}
-
-.garment-thumb-card img {
-  max-height: 110px;
-  width: auto;
-  object-fit: contain;
-  transition: transform 0.4s ease;
-}
-
-.garment-thumb-card:hover img {
-  transform: scale(1.1);
-}
-
-.garment-thumb-label {
-  font-size: 0.68rem;
-  font-weight: 600;
-  text-align: center;
-  color: #333;
-  margin-top: 0.5rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
-}
-
 /* Bottom Campaign Banner */
 .campaign-ocean-banner {
   margin-top: 2.5rem;

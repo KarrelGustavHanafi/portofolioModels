@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Search, X, ArrowRight, Tag } from 'lucide-react';
 import { portfolioLooks, brandProducts } from '../data/portfolioData';
-import { collabProjects } from '../data/collabData';
 import Picture from './Picture';
 
 export default function SearchModal({ isOpen, onClose, onSelectItem, onNavigate }) {
@@ -15,16 +14,13 @@ export default function SearchModal({ isOpen, onClose, onSelectItem, onNavigate 
       .filter(l => l.title.toLowerCase().includes(q) || l.description.toLowerCase().includes(q) || l.category.toLowerCase().includes(q))
       .map(l => ({ ...l, type: 'Look' }));
 
-    // Garments were retired from the page, so the product pair is searchable instead
+    // Garments and the old collaboration cards were retired from the page, so
+    // the product pair is searchable instead.
     const matchedProducts = brandProducts
       .filter(p => p.name.toLowerCase().includes(q))
       .map(p => ({ ...p, title: p.name, type: 'Product' }));
 
-    const matchedCollabs = collabProjects
-      .filter(c => c.title.toLowerCase().includes(q) || c.brand.toLowerCase().includes(q) || c.category.toLowerCase().includes(q))
-      .map(c => ({ ...c, type: 'Collaboration' }));
-
-    return [...matchedLooks, ...matchedProducts, ...matchedCollabs].slice(0, 8);
+    return [...matchedLooks, ...matchedProducts].slice(0, 8);
   }, [query]);
 
   if (!isOpen) return null;
