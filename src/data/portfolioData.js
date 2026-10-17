@@ -1,7 +1,7 @@
 /**
  * Lookbook Duo Stage — the two large hero cards.
- * Kept separate from `portfolioLooks` on purpose: the archive grid below still
- * renders the original looks, so swapping these two must not touch it.
+ * Kept separate from the archive grid on purpose: swapping these two hero
+ * cards must not disturb the Complete Archive list below.
  * Credits are omitted rather than invented; Lightbox hides the block when absent.
  */
 export const lookbookStageLooks = [
@@ -60,9 +60,9 @@ export const brandCollectionLabel = 'GOZEAL';
 
 /**
  * Complete Archive → Collaborated Works.
- * Deliberately a separate export from `portfolioLooks`: that array still backs
- * the Lookbook Duo archive lookups and the global search, so it must not be
- * edited to swap this grid out. Only this section reads `collaboratedWorks`.
+ * Only the Collaborated Works archive belongs here. The Denim Lounge and Analog
+ * Telephone looks are not brand collaborations - they are shown on Home and
+ * About The Model instead, so they are deliberately absent from this list.
  *
  * Titles describe what is visible in each frame. No campaign, credit or client
  * is claimed, because none is verifiable from the photographs themselves.
@@ -73,37 +73,4 @@ export const collaboratedWorks = [
   { id: 'work-03', title: 'Group Portrait 03', category: 'Selected', image: '/assets/collaborated-works/work_03.webp' },
   { id: 'work-04', title: 'Group Portrait 04', category: 'Selected', image: '/assets/collaborated-works/work_04.webp' },
   { id: 'work-05', title: 'Group Portrait 05', category: 'Selected', image: '/assets/collaborated-works/work_05.webp' }
-];
-
-export const portfolioLooks = [
-  {
-    id: 'look-4',
-    title: 'Denim Lounge Editorial — Casual Muse',
-    campaign: 'PORTFOLIO DEBUT CAMPAIGN',
-    image: '/assets/home.webp',
-    fullImage: '/assets/home.webp',
-    category: 'Campaign',
-    description: 'Signature Y2K denim set featuring oversized distressed denim beanbag seating, tailored pinstripe sleeveless shirt, and tortoiseshell acetate optical frames.',
-    pieces: ['Pinstripe Cotton Sleeveless Blouse', 'Tailored Black Mini Skort', 'Tortoiseshell Optical Glasses', 'Retro Suede Blue Runners'],
-    credits: {
-      photographer: 'Jin-Kyu Lee',
-      stylist: 'Hana Sato',
-      artDirection: 'CONENM Studio'
-    }
-  },
-  {
-    id: 'look-5',
-    title: 'Analog Telephone Portraiture',
-    campaign: 'ABOUT THE MODEL EDITORIAL',
-    image: '/assets/about/model_telephone_hero.webp',
-    fullImage: '/assets/about/model_telephone_hero.webp',
-    category: 'Editorial',
-    description: 'Relaxed studio composition featuring vintage rotary telephone handset, striped ribbed knit crop sweater, silver chain waist accessory, and fur-trimmed heels.',
-    pieces: ['Multi-Stripe Ribbed Cropped Cardigan', 'High-Waisted Mini Skirt', 'Dangling Silver Chain Belt', 'Feathered Strappy Mule Heels'],
-    credits: {
-      photographer: 'Sora Kang',
-      stylist: 'CONENM Collective',
-      artDirection: 'Creative Bureau'
-    }
-  }
 ];

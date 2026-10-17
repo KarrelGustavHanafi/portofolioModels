@@ -12,8 +12,8 @@ import Picture from '../components/Picture';
 export default function Portfolio({ onOpenLightbox }) {
   const [category, setCategory] = useState('All');
 
-  // Stage cards read their own data; `portfolioLooks` stays reserved for search
-  // and the lookups that reference it.
+  // Stage cards read their own data; the Complete Archive grid below is the
+  // single source for the Collaborated Works list.
   const [heroLook, secondLook] = lookbookStageLooks;
   const categories = ['All', ...new Set(collaboratedWorks.map(w => w.category))];
 

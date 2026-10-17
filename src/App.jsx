@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Lightbox from './components/Lightbox';
 import CollabModal from './components/CollabModal';
-import SearchModal from './components/SearchModal';
 
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
@@ -17,7 +16,6 @@ export default function App() {
   // Modals state
   const [lightboxData, setLightboxData] = useState(null);
   const [activeCollab, setActiveCollab] = useState(null);
-  const [searchOpen, setSearchOpen] = useState(false);
 
   // Sync page title
   useEffect(() => {
@@ -31,28 +29,6 @@ export default function App() {
     document.title = titles[activePage] || 'CONENM — Fashion Model';
   }, [activePage]);
 
-  // Handle Search Result Selection
-  const handleSelectSearchResult = (item) => {
-    if (item.type === 'Look') {
-      setActivePage('portfolio');
-      setLightboxData({
-        image: item.fullImage || item.image,
-        title: item.title,
-        caption: item.description,
-        credits: item.credits
-      });
-    } else if (item.type === 'Product') {
-      setActivePage('portfolio');
-      setLightboxData({
-        image: item.image,
-        title: item.title
-      });
-    } else if (item.type === 'Collaboration') {
-      setActivePage('collaborations');
-      setActiveCollab(item);
-    }
-  };
-
   return (
     <div className="portfolio-app-root">
       {/* Editorial Grain Overlay */}
@@ -62,7 +38,6 @@ export default function App() {
       <Navbar
         activePage={activePage}
         setActivePage={setActivePage}
-        onOpenSearch={() => setSearchOpen(true)}
       />
 
       {/* Main Page Rendering — keyed so the entrance transition replays on each
@@ -131,13 +106,6 @@ export default function App() {
           onClose={() => setActiveCollab(null)}
         />
       )}
-
-      {/* Search Modal */}
-      <SearchModal
-        isOpen={searchOpen}
-        onClose={() => setSearchOpen(false)}
-        onSelectItem={handleSelectSearchResult}
-      />
     </div>
   );
 }

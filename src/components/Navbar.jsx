@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Search, Menu, X, Mail } from 'lucide-react';
+import { Menu, X, Mail } from 'lucide-react';
 import { InstagramIcon, TikTokIcon } from './Icons';
 import { creativeSections } from '../data/creativeData';
 import { useActiveSection } from '../hooks/useActiveSection';
 
-export default function Navbar({ activePage, setActivePage, onOpenSearch }) {
+export default function Navbar({ activePage, setActivePage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -99,15 +99,6 @@ export default function Navbar({ activePage, setActivePage, onOpenSearch }) {
 
         {/* Right Action Icons */}
         <div className="nav-actions">
-          <button
-            className="nav-icon-btn"
-            onClick={onOpenSearch}
-            title="Search Archive"
-            aria-label="Search Archive"
-          >
-            <Search size={19} />
-          </button>
-
           <a
             href="https://www.instagram.com/azkiaprus/"
             target="_blank"
